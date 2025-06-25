@@ -1,0 +1,233 @@
+/* Estilização geral */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 20px;
+  background-image: url("https://i.postimg.cc/7YtYG4Lj/image.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Títulos */
+h1, h2, h3 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Botão "Sair" */
+#logout-btn {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  float: right;
+  margin-top: -60px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+#logout-btn:hover {
+  background-color: #c82333;
+}
+
+/* Formulário - Labels */
+form label,
+#lista-livros-section label[for="pesquisa-autor"],
+#register-form label,
+#login-form label {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Inputs e Selects */
+form input,
+form select,
+#pesquisa-autor,
+#register-form input,
+#login-form input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+}
+
+/* Botões do formulário */
+.botoes-form,
+form button,
+#register-form button[type="submit"],
+#login-form button[type="submit"] {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+button[type="submit"],
+#register-form button[type="submit"],
+#login-form button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+button[type="submit"]:hover,
+#register-form button[type="submit"]:hover,
+#login-form button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+#cancel-btn,
+.btn-cancelar {
+  background-color: #aaa;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+#cancel-btn:hover,
+.btn-cancelar:hover {
+  background-color: #888;
+}
+
+/* Input pesquisa autor */
+#pesquisa-autor {
+  font-size: 16px;
+}
+
+/* Tabela */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 25px;
+  font-size: 16px;
+}
+
+th, td {
+  padding: 12px 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  color: #333;
+}
+
+tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* Botões da tabela */
+.btn-editar {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-editar:hover {
+  background-color: #218838;
+}
+
+.btn-excluir {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-excluir:hover {
+  background-color: #c82333;
+}
+
+/* Status dos livros */
+.status {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.9em;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.status.lido {
+  background-color: #d1e7dd;
+  color: #0f5132;
+}
+
+.status.lendo {
+  background-color: #fff3cd;
+  color: #664d03;
+}
+
+.status.quero-ler {
+  background-color: #cfe2ff;
+  color: #084298;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+  }
+
+  table, th, td {
+    font-size: 14px;
+  }
+
+  #logout-btn {
+    padding: 8px 16px;
+    margin-top: -50px;
+  }
+}
+
+/* Links de navegação (ex: cadastro/login) */
+p a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+p a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}

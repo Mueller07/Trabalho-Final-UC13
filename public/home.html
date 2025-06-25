@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Biblioteca - Meus Livros</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="home-page">
+  <main class="container">
+    <h1 id="welcome-msg">Bem-vindo(a) à sua Biblioteca</h1>
+    <button id="logout-btn">Sair</button>
+
+    <section id="form-section">
+      <h2>Adicionar / Editar Livro</h2>
+      <form id="livro-form">
+        <input type="hidden" id="livro-id" />
+        
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" required />
+        
+        <label for="autor">Autor:</label>
+        <input type="text" id="autor" required />
+        
+        <label for="genero">Gênero:</label>
+        <input type="text" id="genero" />
+        
+        <label for="anoPublicacao">Ano de Publicação:</label>
+        <input type="number" id="anoPublicacao" min="0" />
+        
+        <label for="status">Status:</label>
+        <select id="status">
+          <option value="Quero Ler">Quero Ler</option>
+          <option value="Lendo">Lendo</option>
+          <option value="Lido">Lido</option>
+        </select>
+        
+        <button type="submit">Salvar</button>
+        <button type="button" id="cancel-btn">Cancelar</button>
+      </form>
+    </section>
+
+    <section id="lista-livros-section">
+      <h2>Meus Livros</h2>
+
+      <!-- Input para pesquisar livro por autor -->
+      <label for="pesquisa-autor">Pesquisar por autor:</label>
+      <input type="text" id="pesquisa-autor" placeholder="Digite o nome do autor" />
+
+      <table id="livros-table">
+        <thead>
+          <tr>
+            <th>Título</th>
+            <th>Autor</th>
+            <th>Gênero</th>
+            <th>Ano</th>
+            <th>Status</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Livros vão ser carregados aqui pelo JS -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="js/home.js"></script>
+</body>
+</html>
