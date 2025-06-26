@@ -1,10 +1,12 @@
+// Escuta o envio do formulário de login
 document.getElementById('login-form').addEventListener('submit', async (e) => {
-  e.preventDefault();
+  e.preventDefault(); // Impede o reload da página
 
   const email = e.target.email.value;
   const senha = e.target.password.value;
 
   try {
+    // Envia dados para o backend autenticar
     const res = await fetch('http://localhost:3000/api/usuarios/user/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -18,8 +20,8 @@ document.getElementById('login-form').addEventListener('submit', async (e) => {
       return;
     }
 
-    // Salva no localStorage para manter "sessão"
-    localStorage.setItem('userId', data.userId || '');  // se tiver userId na resposta
+    // Salva dados no localStorage para manter sessão
+    localStorage.setItem('userId', data.userId || '');
     localStorage.setItem('nome', data.nome || 'Usuário');
 
     alert('Login realizado com sucesso!');
@@ -30,4 +32,3 @@ document.getElementById('login-form').addEventListener('submit', async (e) => {
     console.error(error);
   }
 });
-
