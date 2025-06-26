@@ -1,90 +1,94 @@
-/* Estilização geral */
+/* Estilização geral do corpo da página */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
-  margin: 0;
-  padding: 20px;
-  background-image: url("https://i.postimg.cc/7YtYG4Lj/image.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  font-family: Arial, sans-serif; /* Fonte padrão */
+  background-color: #f9f9f9; /* Cor de fundo clara */
+  margin: 0; /* Remove margem padrão */
+  padding: 20px; /* Espaçamento interno da página */
+  background-image: url("https://i.postimg.cc/7YtYG4Lj/image.png"); /* Imagem de fundo */
+  background-size: cover; /* A imagem cobre toda a área */
+  background-position: center; /* Centraliza a imagem */
+  background-repeat: no-repeat; /* Não repete a imagem */
+  background-attachment: fixed; /* Imagem fixa ao rolar a página */
 }
 
+/* Container principal para centralizar conteúdo e aplicar fundo branco */
 .container {
-  max-width: 900px;
-  margin: auto;
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 900px; /* Largura máxima */
+  margin: auto; /* Centraliza horizontalmente */
+  background-color: #fff; /* Fundo branco */
+  padding: 30px; /* Espaçamento interno */
+  border-radius: 8px; /* Bordas arredondadas */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra leve */
 }
 
-/* Títulos */
+/* Estilo para títulos h1, h2 e h3 */
 h1, h2, h3 {
-  margin-bottom: 20px;
-  color: #333;
+  margin-bottom: 20px; /* Espaço abaixo */
+  color: #333; /* Cor do texto */
 }
 
-/* Botão "Sair" */
+/* Botão "Sair" (logout) */
 #logout-btn {
-  background-color: #dc3545;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
-  float: right;
-  margin-top: -60px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease;
+  background-color: #dc3545; /* Vermelho */
+  color: #fff; /* Texto branco */
+  border: none; /* Sem borda */
+  padding: 10px 20px; /* Espaçamento interno */
+  border-radius: 6px; /* Bordas arredondadas */
+  font-weight: bold; /* Texto em negrito */
+  cursor: pointer; /* Cursor de mão */
+  float: right; /* Posicionado à direita */
+  margin-top: -60px; /* Ajuste vertical */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra */
+  transition: background-color 0.3s ease; /* Transição suave */
 }
+
+/* Mudança de cor ao passar o mouse no botão logout */
 #logout-btn:hover {
   background-color: #c82333;
 }
 
-/* Formulário - Labels */
+/* Estilo para labels de formulários e pesquisa */
 form label,
 #lista-livros-section label[for="pesquisa-autor"],
 #register-form label,
 #login-form label {
-  display: block;
+  display: block; /* Quebra linha */
   margin-top: 10px;
   margin-bottom: 6px;
-  font-weight: bold;
+  font-weight: bold; /* Texto em negrito */
   color: #333;
 }
 
-/* Inputs e Selects */
+/* Estilo para inputs e selects nos formulários */
 form input,
 form select,
 #pesquisa-autor,
 #register-form input,
 #login-form input {
-  width: 100%;
-  padding: 10px;
+  width: 100%; /* Largura total do container pai */
+  padding: 10px; /* Espaçamento interno */
   margin-top: 5px;
   margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-  font-size: 16px;
+  border: 1px solid #ccc; /* Borda cinza clara */
+  border-radius: 4px; /* Bordas arredondadas */
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); /* Sombra leve */
+  font-size: 16px; /* Tamanho da fonte */
 }
 
-/* Botões do formulário */
+/* Botões nos formulários */
 .botoes-form,
 form button,
 #register-form button[type="submit"],
 #login-form button[type="submit"] {
-  display: inline-block;
+  display: inline-block; /* Ficam lado a lado */
   margin-top: 10px;
 }
 
+/* Estilo específico para botões de envio */
 button[type="submit"],
 #register-form button[type="submit"],
 #login-form button[type="submit"] {
-  background-color: #007bff;
+  background-color: #007bff; /* Azul */
   color: white;
   border: none;
   padding: 12px 24px;
@@ -96,15 +100,17 @@ button[type="submit"],
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
+/* Mudança de cor do botão de enviar ao passar o mouse */
 button[type="submit"]:hover,
 #register-form button[type="submit"]:hover,
 #login-form button[type="submit"]:hover {
   background-color: #0056b3;
 }
 
+/* Botões de cancelar */
 #cancel-btn,
 .btn-cancelar {
-  background-color: #aaa;
+  background-color: #aaa; /* Cinza */
   color: white;
   border: none;
   padding: 10px 20px;
@@ -115,43 +121,47 @@ button[type="submit"]:hover,
   transition: background-color 0.3s ease;
 }
 
+/* Mudança de cor no hover do botão cancelar */
 #cancel-btn:hover,
 .btn-cancelar:hover {
   background-color: #888;
 }
 
-/* Input pesquisa autor */
+/* Input para pesquisa por autor */
 #pesquisa-autor {
   font-size: 16px;
 }
 
-/* Tabela */
+/* Estilo geral da tabela */
 table {
-  width: 100%;
-  border-collapse: collapse;
+  width: 100%; /* Ocupa toda largura disponível */
+  border-collapse: collapse; /* Remove espaçamento entre células */
   margin-top: 25px;
   font-size: 16px;
 }
 
+/* Células da tabela */
 th, td {
   padding: 12px 10px;
   text-align: left;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #ddd; /* Linha fina cinza na base */
 }
 
+/* Cabeçalhos da tabela */
 th {
-  background-color: #f2f2f2;
+  background-color: #f2f2f2; /* Fundo cinza claro */
   font-weight: bold;
   color: #333;
 }
 
+/* Linha da tabela ao passar o mouse */
 tr:hover {
   background-color: #f9f9f9;
 }
 
-/* Botões da tabela */
+/* Botão Editar na tabela */
 .btn-editar {
-  background-color: #28a745;
+  background-color: #28a745; /* Verde */
   color: white;
   border: none;
   padding: 6px 12px;
@@ -161,12 +171,14 @@ tr:hover {
   transition: background-color 0.3s ease;
 }
 
+/* Hover botão Editar */
 .btn-editar:hover {
   background-color: #218838;
 }
 
+/* Botão Excluir na tabela */
 .btn-excluir {
-  background-color: #dc3545;
+  background-color: #dc3545; /* Vermelho */
   color: white;
   border: none;
   padding: 6px 12px;
@@ -175,11 +187,12 @@ tr:hover {
   transition: background-color 0.3s ease;
 }
 
+/* Hover botão Excluir */
 .btn-excluir:hover {
   background-color: #c82333;
 }
 
-/* Status dos livros */
+/* Estilo dos status dos livros - com bordas arredondadas e destaque */
 .status {
   padding: 4px 10px;
   border-radius: 20px;
@@ -188,29 +201,30 @@ tr:hover {
   display: inline-block;
 }
 
+/* Cores para status específicos */
 .status.lido {
-  background-color: #d1e7dd;
-  color: #0f5132;
+  background-color: #d1e7dd; /* Verde claro */
+  color: #0f5132; /* Verde escuro */
 }
 
 .status.lendo {
-  background-color: #fff3cd;
-  color: #664d03;
+  background-color: #fff3cd; /* Amarelo claro */
+  color: #664d03; /* Amarelo escuro */
 }
 
 .status.quero-ler {
-  background-color: #cfe2ff;
-  color: #084298;
+  background-color: #cfe2ff; /* Azul claro */
+  color: #084298; /* Azul escuro */
 }
 
-/* Responsividade */
+/* Ajustes para telas pequenas (mobile) */
 @media (max-width: 600px) {
   .container {
-    padding: 15px;
+    padding: 15px; /* Menos espaçamento interno */
   }
 
   table, th, td {
-    font-size: 14px;
+    font-size: 14px; /* Fonte menor para caber na tela */
   }
 
   #logout-btn {
@@ -219,15 +233,16 @@ tr:hover {
   }
 }
 
-/* Links de navegação (ex: cadastro/login) */
+/* Estilo para links em parágrafos (ex: links para cadastro ou login) */
 p a {
-  color: #007bff;
-  text-decoration: none;
+  color: #007bff; /* Azul */
+  text-decoration: none; /* Sem sublinhado */
   font-weight: 600;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease; /* Transição suave na cor */
 }
 
+/* Hover para links */
 p a:hover {
-  color: #0056b3;
+  color: #0056b3; /* Azul mais escuro */
   text-decoration: underline;
 }
