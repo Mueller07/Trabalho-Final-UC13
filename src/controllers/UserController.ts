@@ -1,13 +1,12 @@
-// src/controllers/UserController.ts
 import { Request, Response, NextFunction } from 'express';
 import { AppDataSource } from '../database/data-source';
 import { User } from '../models/User';
 import bcrypt from 'bcryptjs';
 
-export class UserController {
-  private userRepository = AppDataSource.getRepository(User);
+const userRepository = AppDataSource.getRepository(User);
 
-  async register(req: Request, res: Response, next: NextFunction): Promise<void> {
+export const UserController = {
+  register: async (req: Request, res: Response) => {
     try {
       const { nome, email, senha } = req.body;
 
@@ -16,23 +15,24 @@ export class UserController {
         return;
       }
 
-      const userExists = await this.userRepository.findOneBy({ email });
+      const userExists = await userRepository.findOneBy({ email });
       if (userExists) {
         res.status(400).json({ mensagem: 'E-mail já cadastrado.' });
         return;
       }
 
       const hash = await bcrypt.hash(senha, 10);
-      const user = this.userRepository.create({ nome, email, senha: hash });
-      await this.userRepository.save(user);
+      const user = userRepository.create({ nome, email, senha: hash });
+      await userRepository.save(user);
 
       res.status(201).json({ mensagem: 'Usuário cadastrado com sucesso!' });
     } catch (error) {
-      next(error);
+      console.error(error);
+      res.status(500).json({ mensagem: "Erro ao cadastrar usuário." });
     }
-  }
+  },
 
-  async login(req: Request, res: Response, next: NextFunction): Promise<void> {
+  login: async (req: Request, res: Response) => {
     try {
       const { email, senha } = req.body;
 
@@ -41,7 +41,7 @@ export class UserController {
         return;
       }
 
-      const user = await this.userRepository.findOneBy({ email });
+      const user = await userRepository.findOneBy({ email });
 
       if (!user) {
         res.status(400).json({ mensagem: 'Usuário não encontrado.' });
@@ -54,7 +54,6 @@ export class UserController {
         return;
       }
 
-      // Retorna dados básicos do usuário, sem JWT
       res.status(200).json({
         mensagem: 'Login bem-sucedido!',
         userId: user.id,
@@ -62,7 +61,8 @@ export class UserController {
         email: user.email,
       });
     } catch (error) {
-      next(error);
+      console.error(error);
+      res.status(500).json({ mensagem: "Erro ao realizar login." });
     }
   }
-}
+};
