@@ -1,12 +1,4 @@
-import {
-  Entity,
-  PrimaryGeneratedColumn,
-  Column,
-  OneToMany,
-  AfterLoad,
-  BeforeInsert,
-  BeforeUpdate,
-} from 'typeorm';
+import {Entity, PrimaryGeneratedColumn, Column, OneToMany, AfterLoad, BeforeInsert, BeforeUpdate,} from 'typeorm';
 import { Livro } from './Livro';
 import bcrypt from 'bcryptjs';
 
